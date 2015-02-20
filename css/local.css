@@ -1,0 +1,74 @@
+/* start override bootstrap */
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default {
+    background-color: #7C0F0A;
+    border-color: #7C0F0A;
+}
+
+.navbar-default .navbar-nav li a {
+    color: #fff;
+}
+
+/*.navbar-nav>li>a {*/
+/*    padding-top: 15px;*/
+/*    padding-bottom: 15px;*/
+/*}*/
+
+/*.nav>li>a {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    padding: 10px 15px;*/
+/*}*/
+
+/* end override bootstrap */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #FD7673;
+    color: #fff;
+    /*padding: 10px;*/
+}
+
+p {
+    line-height: 1.2; /* extra */
+}
+
+li {
+    margin-left: 10px;
+}
+
+nav {
+    background: #7C0F0A;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*padding: 1px;*/
+    border-radius: 10px; /* extra */
+}
+
+nav ul {
+    list-style-image: none;
+}
+
+nav ul li {
+    display: inline;
+    padding-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.profilepic {
+    width: 200px;
+    margin-right: 30px;
+    border: 3px solid #fff;
+}
+
+.sidebar {
+   float: left; 
+}

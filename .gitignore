@@ -1,2 +1,6 @@
-_site/
-.sass-cache/
+
+dev
+node_modules
+bower_components
+
+.c9
