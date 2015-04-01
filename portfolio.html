@@ -5,27 +5,30 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto:900,900italic,400italic,400' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/local.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+        <script src="bower_components/vendee/vendee.js"></script>
     </head>
     <body>
         <div class="container">
             <nav id="nav"></nav>
-            
-            <div id="content">
+            <div class="main">
                 <h1>Portfolio</h1>
-                <ul>
-                    <li><a href="worm-hole/">Worm Hole</a></li>
-                    <li><a href="frabonacci/">Frabonacci</a></li>
+                <ul id="portfolio" class="portfolio">
                 </ul>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <script> 
-          $(document).ready(function() {
-               $(function(){
-                   $("#nav").load("nav.html");
-               });
-          });
+        <script>
+            $(document).ready(function() {
+                $.getJSON('.projects.json').then(function(data) {
+                    data.projects.forEach(function(project){
+                        $("#portfolio").append('<li><a href="' + project.name + '/">' + project.title + ' : ' + project.description + '</a></li>');
+                    });
+                });
+                
+                $("#nav").load("nav.html");
+            });
         </script>
     </body>
 </html>
