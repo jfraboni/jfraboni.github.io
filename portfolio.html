@@ -21,7 +21,7 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function() {
-                $.getJSON('.projects.json').then(function(data) {
+                $.getJSON('projects.json').then(function(data) {
                     data.projects.forEach(function(project){
                         $("#portfolio").append('<li><a href="' + project.name + '/">' + project.title + ' : ' + project.description + '</a></li>');
                     });
