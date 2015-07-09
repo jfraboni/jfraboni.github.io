@@ -1,5 +1,5 @@
 {
-    "activeDataSet": "three",
+    "activeDataSet": "two",
     
     "one" : {
         "growthX": 0.010001,
@@ -19,7 +19,7 @@
         "scaleX": 0.30,
         "scaleY": 1,
         "degrade": 0.9998,
-        "max": 314,
+        "max": 180,
         "goldenAngle": 137.508,
         "radius": 20,
         "radiusGrowthFactor": 1.013,

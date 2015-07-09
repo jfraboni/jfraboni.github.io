@@ -1,6 +1,6 @@
 {
   "name": "opspark-draw",
-  "version": "0.3.14",
+  "version": "0.3.15",
   "homepage": "https://github.com/OperationSpark/draw",
   "authors": [
     "John Fraboni <john@operationspark.org>"
@@ -9,7 +9,7 @@
   "main": "draw.js",
   "dependencies": {
     "easeljs": "~0.8.0",
-    "lodash": "~3.2.0"
+    "lodash": "~3.0.0"
   },
   "keywords": [
     "CreateJS",
@@ -27,11 +27,11 @@
     "test",
     "tests"
   ],
-  "_release": "0.3.14",
+  "_release": "0.3.15",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.14",
-    "commit": "43759d331648fc061800c448472c41063bc74cfd"
+    "tag": "0.3.15",
+    "commit": "cc6fdc82541fd0fe1d238e52fc3ef0e3ce40d83b"
   },
   "_source": "git://github.com/OperationSpark/draw.git",
   "_target": "~0.3.12",

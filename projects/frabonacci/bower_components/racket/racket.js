@@ -110,11 +110,11 @@
                 return (distance < radiusOne + radiusTwo);
             },
             
-            interact: function (bodies, spring) {
-                for(var i = bodies.length - 1; i > 0; i--) {
-                    var bodyA = bodies[i];
+            updateSpace: function (space, spring) {
+                for(var i = space.length - 1; i > 0; i--) {
+                    var bodyA = space[i];
                     for(var j = i - 1; j > -1; j--) {
-                        var bodyB = bodies[j];
+                        var bodyB = space[j];
                         
                         var dx = bodyB.x - bodyA.x;
                         var dy = bodyB.y - bodyA.y;
@@ -131,9 +131,14 @@
                             bodyB.velocityX += ax;
                             bodyB.velocityY += ay;
                             
-                            var impact = bodyA.volatility + bodyB.volatility;
-                            bodyA.handleCollision(impact);
-                            bodyB.handleCollision(impact);
+                            var combinedVolatility = bodyA.volatility + bodyB.volatility;
+                            var combinedDensity = bodyA.density * bodyB.density;
+                            var impact = (combinedVolatility ? combinedVolatility * combinedDensity : combinedDensity);
+                            // console.log(combinedVolatility);
+                            // console.log(combinedDensity);
+                            // console.log(impact);
+                            bodyA.handleCollision(impact, bodyB);
+                            bodyB.handleCollision(impact, bodyA);
                         }
                     }
                 }
@@ -167,16 +172,17 @@
                 // }
             },
             
-            makeBody: function (velocityX, velocityY, rotationalVelocity, density, integrity, volatility) {
+            makeBody: function (type, velocityX, velocityY, rotationalVelocity, integrity, density, volatility) {
                 return {
+                    type: type || 'undefined',
                     velocityX: velocityX || 0,
                     velocityY: velocityY || 0,
                     rotationalVelocity: rotationalVelocity || 0,
-                    density: density || 1,
                     integrity: integrity || 1,
+                    density: density || 1,
                     volatility: volatility || 0,
                     
-                    handleCollision: function (impact) {
+                    handleCollision: function (impact, body) {
                         // template method //
                     }
                 };
